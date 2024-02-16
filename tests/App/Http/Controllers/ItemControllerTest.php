@@ -2,7 +2,7 @@
 
 namespace Tests\App\Http\Controllers;
 
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 use Tests\TestCase;
 
 # php artisan test --filter=ItemControllerTest
@@ -49,7 +49,7 @@ class ItemControllerTest extends TestCase
         $requestData = ['page' => 1, 'perPage' => 5];
 
         $response = $this->get(route('items', $requestData));
-        $response->assertStatus(Response::HTTP_OK);
+        $response->assertStatus(ResponseAlias::HTTP_OK);
         $response->assertJson([
             'data' => $data,
             'meta' => $meta,
@@ -97,7 +97,7 @@ class ItemControllerTest extends TestCase
         $requestData = ['page' => 2, 'perPage' => 5];
 
         $response = $this->get(route('items-api-legacy', $requestData));
-        $response->assertStatus(Response::HTTP_OK);
+        $response->assertStatus(ResponseAlias::HTTP_OK);
         $response->assertJson([
             'data' => $data,
             'meta' => $meta,

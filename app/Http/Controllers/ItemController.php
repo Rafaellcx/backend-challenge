@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PaginateRequest;
 use App\Services\Contracts\ItemServiceContract;
-use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {

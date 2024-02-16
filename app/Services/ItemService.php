@@ -17,7 +17,7 @@ class ItemService implements ItemServiceContract {
         $page = $fields['page'] ?? 1;
         $perPage = $fields['perPage'] ?? 100;
 
-        $response = Http::get("{$this->legacyApiUrl}/items");
+        $response = Http::get("$this->legacyApiUrl/items");
 
         return $this->extracted(response: $response, calcStartIndex: true,perPage: $perPage, page: $page);
     }
@@ -27,7 +27,7 @@ class ItemService implements ItemServiceContract {
         $page = $fields['page'] ?? 1;
         $perPage = $fields['perPage'] ?? 100;
 
-        $response = Http::get("{$this->legacyApiUrl}/items",[
+        $response = Http::get("$this->legacyApiUrl/items",[
             'page' => $page
         ]);
 
